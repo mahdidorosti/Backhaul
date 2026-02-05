@@ -18,7 +18,7 @@ const ( // Default values
 	defaultDialTimeout    = 10 // 10 seconds
 	// related to smux
 	defaultMuxVersion       = 1
-	defaultMaxFrameSize     = 32768   // 32KB
+	defaultMaxFrameSize     = 4096    // 4KB - limited for data center packet optimization
 	defaultMaxReceiveBuffer = 4194304 // 4MB
 	defaultMaxStreamBuffer  = 65536   // 256KB
 	defaultSnifferLog       = "backhaul.json"
