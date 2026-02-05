@@ -93,7 +93,7 @@ To start using the solution, you'll need to configure both server and client com
     heartbeat = 40                # In seconds. Ping interval for tunnel stability. Min: 1s. (Optional, default: 40s)
     mux_con = 8                   # Mux concurrency. Number of connections that can be multiplexed into a single stream (optional, default: 8).
     mux_version = 1               # SMUX protocol version (1 or 2). Version 2 may have extra features. (optional)
-    mux_framesize = 32768         # 32 KB. The maximum size of a frame that can be sent over a connection. (optional)
+    mux_framesize = 4096          # 4 KB. The maximum size of a frame that can be sent over a connection. (optional, default: 4KB)
     mux_recievebuffer = 4194304   # 4 MB. The maximum buffer size for incoming data per connection. (optional)
     mux_streambuffer = 65536      # 256 KB. The maximum buffer size per individual stream within a connection. (optional)
     sniffer = false               # Enable or disable network sniffing for monitoring data. (optional, default false)
@@ -143,7 +143,7 @@ To start using the solution, you'll need to configure both server and client com
    retry_interval = 3            # Retry interval in seconds (optional, default: 3s).
    dial_timeout = 10             # Sets the max wait time for establishing a network connection. (optional, default: 10s)
    mux_version = 1               # SMUX protocol version (1 or 2). Version 2 may have extra features. (optional)
-   mux_framesize = 32768         # 32 KB. The maximum size of a frame that can be sent over a connection. (optional)
+   mux_framesize = 4096          # 4 KB. The maximum size of a frame that can be sent over a connection. (optional, default: 4KB)
    mux_recievebuffer = 4194304   # 4 MB. The maximum buffer size for incoming data per connection. (optional)
    mux_streambuffer = 65536      # 256 KB. The maximum buffer size per individual stream within a connection. (optional)
    sniffer = false               # Enable or disable network sniffing for monitoring data. (optional, default false)
@@ -228,7 +228,7 @@ To start using the solution, you'll need to configure both server and client com
    channel_size = 2048
    mux_con = 8
    mux_version = 1
-   mux_framesize = 32768 
+   mux_framesize = 4096 
    mux_recievebuffer = 4194304
    mux_streambuffer = 65536 
    sniffer = false 
@@ -251,7 +251,7 @@ To start using the solution, you'll need to configure both server and client com
    retry_interval = 3
    nodelay = true 
    mux_version = 1
-   mux_framesize = 32768 
+   mux_framesize = 4096 
    mux_recievebuffer = 4194304
    mux_streambuffer = 65536 
    sniffer = false 
@@ -401,7 +401,7 @@ To start using the solution, you'll need to configure both server and client com
    channel_size = 2048
    mux_con = 8
    mux_version = 1
-   mux_framesize = 32768 
+   mux_framesize = 4096 
    mux_recievebuffer = 4194304
    mux_streambuffer = 65536 
    sniffer = false 
@@ -425,7 +425,7 @@ To start using the solution, you'll need to configure both server and client com
    nodelay = true
    retry_interval = 3
    mux_version = 1
-   mux_framesize = 32768 
+   mux_framesize = 4096 
    mux_recievebuffer = 4194304
    mux_streambuffer = 65536 
    sniffer = false 
@@ -448,7 +448,7 @@ To start using the solution, you'll need to configure both server and client com
    channel_size = 2048
    mux_con = 8
    mux_version = 1
-   mux_framesize = 32768 
+   mux_framesize = 4096 
    mux_recievebuffer = 4194304
    mux_streambuffer = 65536 
    tls_cert = "/root/server.crt"      
@@ -474,7 +474,7 @@ To start using the solution, you'll need to configure both server and client com
    connection_pool = 8
    aggressive_pool = false
    mux_version = 1
-   mux_framesize = 32768 
+   mux_framesize = 4096 
    mux_recievebuffer = 4194304
    mux_streambuffer = 65536  
    sniffer = false 
