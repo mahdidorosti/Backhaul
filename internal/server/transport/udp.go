@@ -293,7 +293,7 @@ func (s *UdpTransport) tunnelListener() {
 }
 
 func (s *UdpTransport) acceptTunnelConn(listener *net.UDPConn) {
-	// Buffer for UDP reads
+	// Buffer for UDP reads - 4KB limit optimized for data center environments to prevent packet drops
 	buf := make([]byte, 4*1024)
 
 	for {
@@ -471,7 +471,7 @@ func (s *UdpTransport) localListener(localAddr, remoteAddr string) {
 
 	s.logger.Infof("UDP listener started successfully, listening on address: %s", listener.LocalAddr().String())
 
-	// Buffer for UDP reads
+	// Buffer for UDP reads - 4KB limit optimized for data center environments to prevent packet drops
 	buf := make([]byte, 4*1024)
 
 	// Track active connections

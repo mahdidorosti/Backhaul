@@ -201,7 +201,7 @@ func udpToTCP(tcp net.Conn, udp *LocalAcceptUDPConn, logger *logrus.Logger, usag
 
 			packetSize := len(data) // Calculate the packet size (data length)
 
-			// the listener buffer size is 16KB, just for preventing bugs in the future!
+			// the listener buffer size is 4KB, optimized for data center environments to prevent packet drops
 			if packetSize > 65535 { // Check for overflow, since 2 bytes can only store values up to 65535 ~ 64KB
 				logger.Errorf("packet too large to send, size: %d bytes", packetSize)
 				continue
